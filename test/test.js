@@ -1,3 +1,4 @@
+/* global describe it */
 var sha3 = require('../lib/index.js')
 var assert = require('assert')
 
@@ -27,42 +28,42 @@ const cases = [
 describe('sha3-256.js', function () {
   describe('No options', function () {
     it('Should return SHA3-256 hash', function () {
-      for (let i in cases) assert.equal(sha3(cases[i].value), cases[i].result)
+      for (let i in cases) assert.strictEqual(sha3(cases[i].value), cases[i].result)
     })
   })
 
   describe('in-hex option', function () {
     const options = ['in-hex']
     it('Should return SHA3-256 hash', function () {
-      for (let i in cases) assert.equal(sha3(cases[i].hex, options), cases[i].result)
+      for (let i in cases) assert.strictEqual(sha3(cases[i].hex, options), cases[i].result)
     })
   })
 
   describe('in-prefixed-hex option', function () {
     const options = ['in-prefixed-hex']
     it('Should return SHA3-256 hash', function () {
-      for (let i in cases) assert.equal(sha3('0x' + cases[i].hex, options), cases[i].result)
+      for (let i in cases) assert.strictEqual(sha3('0x' + cases[i].hex, options), cases[i].result)
     })
   })
 
   describe('out-prefixed option', function () {
     const options = ['out-prefixed']
     it('Should return SHA3-256 hash', function () {
-      for (let i in cases) assert.equal(sha3(cases[i].value, options), '0x' + cases[i].result)
+      for (let i in cases) assert.strictEqual(sha3(cases[i].value, options), '0x' + cases[i].result)
     })
   })
 
   describe('in-hex in-prefixed-hex option', function () {
     const options = ['in-hex', 'out-prefixed']
     it('Should return SHA3-256 hash', function () {
-      for (let i in cases) assert.equal(sha3(cases[i].hex, options), '0x' + cases[i].result)
+      for (let i in cases) assert.strictEqual(sha3(cases[i].hex, options), '0x' + cases[i].result)
     })
   })
 
   describe('in-prefixed-hex in-prefixed-hex option', function () {
     const options = ['in-prefixed-hex', 'out-prefixed']
     it('Should return SHA3-256 hash', function () {
-      for (let i in cases) assert.equal(sha3('0x' + cases[i].hex, options), '0x' + cases[i].result)
+      for (let i in cases) assert.strictEqual(sha3('0x' + cases[i].hex, options), '0x' + cases[i].result)
     })
   })
 })
