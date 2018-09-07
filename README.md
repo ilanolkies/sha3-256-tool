@@ -31,3 +31,8 @@ sha3> string-to-hash
 - **'out-prefixed'**: output will be prefixed with '0x'.
 
 > Do not use both 'in-hex' and 'in-prefixed-hex'
+
+## Tests
+```bash
+npm test
+```
