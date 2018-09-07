@@ -14,6 +14,9 @@ npm install
 
 ```
 node sha3-256.js
+#or
+npm start
+
 sha3> string-to-hash
 ```
 
@@ -23,6 +26,9 @@ Init separating options with sapces:
 
 ```
 node sha3-256.js opt1 opt2
+#or
+npm start opt1 opt2
+
 sha3> string-to-hash
 ```
 
